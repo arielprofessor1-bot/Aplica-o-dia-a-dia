@@ -1,0 +1,444 @@
+
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-principal: #8170e8;
+    --cor-principal-escura: #6b59d1;
+    --cor-fundo: #f7f7fc;
+    --cor-cartao: #ffffff;
+    --cor-texto: #29283a;
+    --cor-texto-secundario: #77758b;
+    --cor-borda: #e9e7f2;
+    --cor-sucesso: #269b70;
+    --cor-alerta: #dc8b31;
+    --cor-erro: #d95366;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ========================================
+   2. CABEÇALHO
+======================================== */
+
+.cabecalho {
+    background-color: var(--cor-cartao);
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 18px 24px;
+}
+
+.marca {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 46px;
+    height: 46px;
+    background-color: var(--cor-principal);
+    color: white;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.marca h1 {
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.marca p {
+    font-size: 13px;
+    color: var(--cor-texto-secundario);
+}
+
+/* ========================================
+   3. CONTEÚDO PRINCIPAL
+======================================== */
+
+.container {
+    max-width: 1100px;
+    width: calc(100% - 40px);
+    margin: 35px auto;
+}
+
+.boas-vindas {
+    margin-bottom: 28px;
+}
+
+#data-atual {
+    color: var(--cor-principal);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.boas-vindas h2 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.boas-vindas > p:last-child {
+    color: var(--cor-texto-secundario);
+}
+
+/* ========================================
+   4. CARTÕES DE RESUMO
+======================================== */
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.cartao {
+    background-color: var(--cor-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 3px 12px rgba(40, 30, 80, 0.03);
+}
+
+.cartao p {
+    color: var(--cor-texto-secundario);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.cartao strong {
+    display: block;
+    font-size: 32px;
+    color: var(--cor-principal);
+}
+
+/* ========================================
+   5. PROGRESSO DIÁRIO
+======================================== */
+
+.progresso {
+    background-color: var(--cor-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.titulo-progresso {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.titulo-progresso h3 {
+    font-size: 17px;
+}
+
+#porcentagem {
+    color: var(--cor-principal);
+    font-weight: bold;
+}
+
+.barra {
+    width: 100%;
+    height: 10px;
+    background-color: #eeecf7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#barra-progresso {
+    width: 0%;
+    height: 100%;
+    background-color: var(--cor-principal);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+/* ========================================
+   6. PAINÉIS
+======================================== */
+
+.painel {
+    background-color: var(--cor-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    padding: 26px;
+    margin-bottom: 24px;
+    box-shadow: 0 3px 12px rgba(40, 30, 80, 0.03);
+}
+
+.painel h2 {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.painel > p {
+    color: var(--cor-texto-secundario);
+}
+
+/* ========================================
+   7. FORMULÁRIO
+======================================== */
+
+#form-tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#form-tarefa label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+#form-tarefa input,
+#form-tarefa select,
+#form-tarefa textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    background-color: #fdfdff;
+    color: var(--cor-texto);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#form-tarefa textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#form-tarefa input:focus,
+#form-tarefa select:focus,
+#form-tarefa textarea:focus {
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 0 3px rgba(129, 112, 232, 0.12);
+}
+
+#form-tarefa button {
+    margin-top: 14px;
+}
+
+/* ========================================
+   8. BOTÕES
+======================================== */
+
+button {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#form-tarefa button {
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 18px;
+}
+
+#form-tarefa button:hover {
+    background-color: var(--cor-principal-escura);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(129, 112, 232, 0.35);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   9. FILTROS
+======================================== */
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.filtros button {
+    padding: 9px 16px;
+    background-color: #f3f1fb;
+    color: var(--cor-texto-secundario);
+    border: 1px solid var(--cor-borda);
+    border-radius: 9px;
+}
+
+.filtros button:hover {
+    background-color: #e9e5ff;
+    color: var(--cor-principal-escura);
+}
+
+/* ========================================
+   10. LISTA DE ATIVIDADES
+======================================== */
+
+#lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.mensagem-vazia {
+    text-align: center;
+    padding: 30px 15px;
+    color: var(--cor-texto-secundario);
+    background-color: #faf9fe;
+    border: 1px dashed var(--cor-borda);
+    border-radius: 12px;
+}
+
+/* Estilos que serão usados quando criarmos
+   os cartões das atividades no JavaScript. */
+
+.item-tarefa {
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 18px;
+    background-color: white;
+}
+
+.item-tarefa h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.item-tarefa p {
+    color: var(--cor-texto-secundario);
+    font-size: 14px;
+}
+
+.item-tarefa.concluida {
+    opacity: 0.7;
+}
+
+.item-tarefa.concluida h3 {
+    text-decoration: line-through;
+}
+
+/* ========================================
+   11. PRIORIDADES E ALERTAS VISUAIS
+======================================== */
+
+.prioridade {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.prioridade-baixa {
+    background-color: #e5f6ed;
+    color: #20794d;
+}
+
+.prioridade-media {
+    background-color: #fff1d9;
+    color: #946018;
+}
+
+.prioridade-alta {
+    background-color: #fde8ec;
+    color: #b72d49;
+}
+
+.tarefa-atrasada {
+    border-left: 4px solid var(--cor-erro);
+}
+
+.tarefa-proxima {
+    border-left: 4px solid var(--cor-alerta);
+}
+
+/* ========================================
+   12. CALENDÁRIO
+======================================== */
+
+#calendario {
+    margin-top: 16px;
+}
+
+/* ========================================
+   13. RODAPÉ
+======================================== */
+
+footer {
+    text-align: center;
+    padding: 25px 20px;
+    color: var(--cor-texto-secundario);
+    font-size: 13px;
+}
+
+/* ========================================
+   14. RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 700px) {
+    .container {
+        width: calc(100% - 28px);
+        margin: 24px auto;
+    }
+
+    .cabecalho {
+        padding: 15px;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .cartao {
+        padding: 18px;
+    }
+
+    .cartao strong {
+        font-size: 28px;
+    }
+
+    .boas-vindas h2 {
+        font-size: 25px;
+    }
+
+    .painel,
+    .progresso {
+        padding: 19px;
+    }
+
+    .filtros button {
+        flex: 1;
+    }
+}

@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyFlow - Organizador Escolar</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="marca">
+            <span class="logo">S</span>
+            <div>
+                <h1>StudyFlow</h1>
+                <p>Seu espaço de organização escolar</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="boas-vindas">
+            <p id="data-atual"></p>
+            <h2>Organize seus estudos!</h2>
+            <p>Planeje suas atividades e acompanhe seu progresso.</p>
+        </section>
+
+        <section class="resumo">
+            <article class="cartao">
+                <p>Atividades totais</p>
+                <strong id="total-tarefas">0</strong>
+            </article>
+
+            <article class="cartao">
+                <p>Pendentes</p>
+                <strong id="tarefas-pendentes">0</strong>
+            </article>
+
+            <article class="cartao">
+                <p>Concluídas hoje</p>
+                <strong id="tarefas-concluidas">0</strong>
+            </article>
+        </section>
+
+        <section class="progresso">
+            <div class="titulo-progresso">
+                <h3>Progresso diário</h3>
+                <span id="porcentagem">0%</span>
+            </div>
+
+            <div class="barra">
+                <div id="barra-progresso"></div>
+            </div>
+        </section>
+
+        <section class="painel">
+            <h2>Adicionar atividade</h2>
+
+            <form id="form-tarefa">
+                <label for="titulo">Nome da atividade</label>
+                <input
+                    type="text"
+                    id="titulo"
+                    placeholder="Ex.: Estudar para a prova"
+                    required
+                >
+
+                <label for="descricao">Descrição</label>
+                <textarea
+                    id="descricao"
+                    placeholder="Detalhes da atividade..."
+                ></textarea>
+
+                <label for="tipo">Tipo de atividade</label>
+                <select id="tipo" required>
+                    <option value="Tarefa">Tarefa</option>
+                    <option value="Prova">Prova</option>
+                    <option value="Trabalho">Trabalho</option>
+                    <option value="Compromisso">Compromisso</option>
+                </select>
+
+                <label for="data">Data de entrega</label>
+                <input type="date" id="data" required>
+
+                <label for="prioridade">Prioridade</label>
+                <select id="prioridade" required>
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média" selected>Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+
+                <button type="submit">Adicionar atividade</button>
+            </form>
+        </section>
+
+        <section class="painel">
+            <h2>Minhas atividades</h2>
+
+            <div class="filtros">
+                <button type="button" data-filtro="Todas">
+                    Todas
+                </button>
+
+                <button type="button" data-filtro="Pendentes">
+                    Pendentes
+                </button>
+
+                <button type="button" data-filtro="Concluídas">
+                    Concluídas
+                </button>
+            </div>
+
+            <div id="lista-tarefas">
+                <p class="mensagem-vazia">
+                    Suas atividades aparecerão aqui.
+                </p>
+            </div>
+        </section>
+
+        <section class="painel">
+            <h2>Calendário escolar</h2>
+            <p>Em breve: visualização das provas e dos compromissos.</p>
+            <div id="calendario"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>StudyFlow © 2026 — Organize, estude e evolua.</p>
+    </footer>
+</body>
+</html>
